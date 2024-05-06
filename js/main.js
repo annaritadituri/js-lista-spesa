@@ -27,15 +27,16 @@ possibilità di aggiungere altri elementi in input
 */
 /////////////////////////////////////////////////
 
-//RESETTARE GLI INPUT IN MODO TALE CHE NON VENGANO RIPETUTI ANCHE GLI ELEMENTI GIÀ PRESENTI
-listaSpesa = [];
-let input = "";
 
 //PERMETTERE DI AGGIUNGERE ELEMENTI CON IL CLICK DI UN PULSANTE
 let buttonAdd = document.getElementById('aggiungi');
 buttonAdd.addEventListener('click',
     
     function() {
+
+        //RESETTARE GLI INPUT IN MODO TALE CHE NON VENGANO RIPETUTI ANCHE GLI ELEMENTI GIÀ PRESENTI
+        listaSpesa = [];
+        let input = "";
 
         //CHIEDERE ALL'UTENTE GLI INPUT
         i = 0;
@@ -48,16 +49,13 @@ buttonAdd.addEventListener('click',
             console.log(listaSpesa[i]);
 
             i++;
-
-        }
-        //IL CICLO SI INTERROMPE QUANDO L'UTENTE INSERISCE LA PAROLA STOP
-        while (input.toUpperCase() !== "STOP") {
-
-            //FARE IN MODO CHE LO STOP NON VENGA AGGIUNTO ALLA LISTA DELLA SPESA
-            listaSpesa.pop();
             
         }
+        //IL CICLO SI INTERROMPE QUANDO L'UTENTE INSERISCE LA PAROLA STOP
+        while (input.toUpperCase() !== "STOP");
 
+        //FARE IN MODO CHE LO STOP NON VENGA AGGIUNTO ALLA LISTA DELLA SPESA
+        listaSpesa.pop();
         console.log({listaSpesa});
 
         //AGGIUNGIAMO ELEMENTI li ALL'ELENCO
@@ -69,6 +67,8 @@ buttonAdd.addEventListener('click',
             ul.append(li);
 
         }
+
+        console.log({listaSpesa});
 
     }
 
